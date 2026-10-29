@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hx Nexus — Dashboard Demo</title>
+  <meta name="description" content="Responsive Hx Nexus dashboard prototype using dummy data.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/font/lucide.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">hx <span>nexus<span class="brand-dot">.</span></span></div>
+    <div class="profile-mini">
+      <div class="avatar">D</div><div><strong>Dana</strong><small>Client ···rgan</small></div>
+    </div>
+    <nav class="side-nav" aria-label="Main navigation">
+      <p class="nav-label">Overview</p>
+      <a class="nav-link active" href="#dashboard" data-page="Dashboard"><i class="icon icon-layout-dashboard"></i>Dashboard<span class="active-dot"></span></a>
+      <p class="nav-label">Money</p>
+      <a class="nav-link" href="#accounts" data-page="Accounts"><i class="icon icon-credit-card"></i>Accounts</a>
+      <a class="nav-link" href="#fund" data-page="Fund"><i class="icon icon-wallet"></i>Fund</a>
+      <a class="nav-link" href="#statements" data-page="Statements"><i class="icon icon-file-text"></i>Statements</a>
+      <p class="nav-label">Engagement</p>
+      <a class="nav-link" href="#rewards" data-page="Rewards"><i class="icon icon-star"></i>Rewards</a>
+      <a class="nav-link" href="#games" data-page="Games"><i class="icon icon-gamepad-2"></i>Games</a>
+      <a class="nav-link" href="#referrals" data-page="Referrals"><i class="icon icon-users"></i>Referrals</a>
+      <p class="nav-label">Your account</p>
+      <a class="nav-link" href="#support" data-page="Support"><i class="icon icon-circle-help"></i>Support</a>
+      <a class="nav-link" href="#onboarding" data-page="Onboarding"><i class="icon icon-check"></i>Onboarding</a>
+      <a class="nav-link" href="#profile" data-page="Profile"><i class="icon icon-user-round"></i>Profile</a>
+    </nav>
+    <div class="sidebar-bottom"><strong>CRM WORKSPACE</strong><p>Balances and funding are for account servicing. No dealing or order tools.</p></div>
+  </aside>
+
+  <button class="mobile-more-scrim" id="mobileMoreScrim" aria-label="Close More menu" hidden></button>
+  <section class="mobile-more-panel" id="mobileMorePanel" role="dialog" aria-modal="true" aria-labelledby="mobileMoreTitle" hidden>
+    <div class="mobile-more-heading">
+      <div><p>Workspace</p><h2 id="mobileMoreTitle">More</h2></div>
+      <button class="mobile-more-close" id="mobileMoreClose" aria-label="Close More menu"><i class="icon icon-x"></i></button>
+    </div>
+    <nav class="mobile-more-links" aria-label="More navigation">
+      <a href="#statements" data-page="Statements"><i class="icon icon-file-text"></i><span><strong>Statements</strong><small>Reports and downloads</small></span></a>
+      <a href="#games" data-page="Games"><i class="icon icon-gamepad-2"></i><span><strong>Games</strong><small>Predictions and rankings</small></span></a>
+      <a href="#referrals" data-page="Referrals"><i class="icon icon-users"></i><span><strong>Referrals</strong><small>Invite link and activity</small></span></a>
+      <a href="#support" data-page="Support"><i class="icon icon-circle-help"></i><span><strong>Support</strong><small>Tickets and live chat</small></span></a>
+      <a href="#onboarding" data-page="Onboarding"><i class="icon icon-check"></i><span><strong>Onboarding</strong><small>Finish account setup</small></span></a>
+      <a href="#profile" data-page="Profile"><i class="icon icon-user-round"></i><span><strong>Profile</strong><small>Identity and preferences</small></span></a>
+    </nav>
+  </section>
+
+  <main class="main-shell">
+    <header class="topbar">
+      <button class="icon-button mobile-menu" id="menuToggle" aria-label="Open navigation"><i class="icon icon-menu"></i></button>
+      <a class="mobile-top-brand" href="#dashboard" data-page="Dashboard" aria-label="Hx Nexus home">n</a>
+      <div class="top-title"><strong id="pageTitle">Dashboard</strong><small><span class="status-dot"></span> Demo snapshot <span class="tiny-chevron">⌄</span></small></div>
+      <div class="top-actions">
+        <button class="theme-switch" id="themeToggle" aria-label="Toggle theme"><i class="icon icon-sun"></i><span class="moon"><i class="icon icon-moon"></i></span></button>
+        <div class="dropdown">
+          <button class="top-control" data-bs-toggle="dropdown" aria-label="Select language"><i class="icon icon-globe"></i><span class="language-label-full">English</span><span class="language-label-mobile">EN</span><i class="icon icon-chevron-down"></i></button>
+          <ul class="dropdown-menu dropdown-menu-end"><li><button class="dropdown-item">English</button></li><li><button class="dropdown-item">Español</button></li><li><button class="dropdown-item">Français</button></li></ul>
+        </div>
+        <div class="dropdown">
+          <button class="icon-button notification-button" data-bs-toggle="dropdown" aria-label="Notifications"><i class="icon icon-bell"></i><span class="notification-count">2</span></button>
+          <div class="dropdown-menu dropdown-menu-end notification-menu"><strong>Notifications</strong><p>New statement available</p><p>Your profile is up to date</p></div>
+        </div>
+        <button class="icon-button mobile-profile" data-page="Profile" aria-label="Open profile"><i class="icon icon-user-round"></i></button>
+        <div class="user-pill"><div class="avatar small">D</div><span><strong>Dana</strong><small>Dana</small></span></div>
+        <button class="top-control signout" id="signOut"><svg class="signout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 4H5.4a1.4 1.4 0 0 0-1.4 1.4v13.2A1.4 1.4 0 0 0 5.4 20H10"></path><path d="M14 8l4 4-4 4M8 12h10"></path></svg><span>Sign out</span></button>
+      </div>
+    </header>
+
+    <nav class="mobile-bottom-nav" aria-label="Main navigation">
+      <a href="#dashboard" data-page="Dashboard"><i class="icon icon-layout-dashboard"></i><span>Home</span></a>
+      <a href="#accounts" data-page="Accounts"><i class="icon icon-credit-card"></i><span>Accounts</span></a>
+      <a href="#fund" data-page="Fund"><i class="icon icon-wallet"></i><span>Fund</span></a>
+      <a href="#rewards" data-page="Rewards"><i class="icon icon-star"></i><span>Rewards</span></a>
+      <button id="mobileMoreToggle" aria-controls="mobileMorePanel" aria-expanded="false"><i class="icon icon-user-round"></i><span>More</span></button>
+    </nav>
+
+    <div class="content" id="pageContent">
+      <section class="welcome-row">
+        <div><p class="eyebrow">Your workspace</p><h1>Good morning, Dana.</h1><p class="welcome-sub">Your accounts, activity and next steps. All in one place.</p></div>
+        <button class="btn-outline" data-action="Open account"><span>＋</span> Open account</button>
+      </section>
+
+      <section class="quick-actions" aria-label="Quick actions">
+        <button class="action-button primary" data-action="Deposit"><i class="icon icon-banknote"></i>Deposit <span>↗</span></button>
+        <button class="action-button" data-action="Withdraw"><i class="icon icon-download"></i>Withdraw <span>↗</span></button>
+        <button class="action-button" data-action="Transfer"><i class="icon icon-arrow-left-right"></i>Transfer <span>↗</span></button>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel account-panel">
+          <div class="panel-heading"><h2>Account overview</h2><a href="#accounts" data-page="Accounts">All accounts <span>↗</span></a></div>
+          <div class="account-tabs" id="accountTabs">
+            <button class="account-tab selected" data-account="Live USD"><strong>Live USD</strong><b>$12,450.00</b><small>MT5 · Live</small></button>
+            <button class="account-tab" data-account="Raw Spread USD"><strong>Raw Spread USD</strong><b>$1,000.00</b><small>MT5 · Live</small></button>
+            <button class="account-tab" data-account="Live EUR"><strong>Live EUR</strong><b>€820.00</b><small>MT5 · Live</small></button>
+            <button class="account-tab" data-account="Demo USD"><strong>Demo USD</strong><b>$100,000.00</b><small>MT5 · Demo</small></button>
+          </div>
+          <div class="account-detail">
+            <div class="balance-head"><div><div class="muted-label">Balance <span class="currency-tag" id="currencyTag">USD</span></div><div class="balance-amount" id="balanceAmount">$12,450.00</div></div><div class="balance-stats"><div><small>Equity</small><strong id="equityAmount">$12,682.00</strong></div><div><small>Unrealised</small><strong class="positive" id="unrealisedAmount">+$232.00</strong></div></div></div>
+            <div class="chart-title-row"><span>Recorded movements</span><div class="segmented"><button class="selected" id="chartView">Chart</button><button id="activityView">Activity</button></div></div>
+            <div class="chart-wrap" id="chartWrap"><canvas id="balanceChart" aria-label="Recorded balance movements chart"></canvas><div class="chart-xlabels"><span>Sep 5</span><span>Sep 30</span></div></div>
+            <div class="activity-list hidden" id="activityList"><div><span>Sep 30 · Cash adjustment</span><b class="positive">+$420.00</b></div><div><span>Sep 22 · Deposit recorded</span><b class="positive">+$1,200.00</b></div><div><span>Sep 14 · Withdrawal recorded</span><b class="negative">−$600.00</b></div><div><span>Sep 5 · Opening balance</span><b>$11,200.00</b></div></div>
+            <p class="chart-note">Cash movements only. Not trading performance.</p>
+            <div class="panel-footer"><span>Updated Oct 5</span><a href="#accounts" data-page="Accounts">Account details <span>↗</span></a></div>
+          </div>
+        </article>
+
+        <div class="right-column">
+          <article class="panel live-panel">
+            <div class="live-heading"><span class="round-icon"><i class="icon icon-banknote"></i></span><h2>Live balances</h2></div>
+            <div class="currency-block"><small>USD</small><strong>$13,450.00</strong><span>Accounts: 2</span></div>
+            <div class="currency-block"><small>EUR</small><strong>€820.00</strong><span>Accounts: 1</span></div>
+            <p class="fine-print">Currencies are shown separately. Practice balances are excluded.</p>
+            <a class="panel-link" href="#accounts" data-page="Accounts">All accounts <span>↗</span></a>
+          </article>
+          <article class="panel margin-panel">
+            <div class="margin-top"><div><h3>Margin overview</h3><small>Live USD</small></div><div class="donut"><span>77%</span></div></div>
+            <div class="margin-line"><span><i class="bullet mint"></i>Free margin</span><strong>$9,824.00</strong></div>
+            <div class="margin-line"><span><i class="bullet"></i>Margin in use</span><strong>$2,858.00</strong></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel open-panel">
+          <h2>What's open</h2>
+          <div class="open-item"><span class="item-icon"><i class="icon icon-clock-3"></i></span><div><strong>Fund requests in progress</strong><small>Awaiting broker review</small></div><b class="count">1</b></div>
+          <div class="open-item"><span class="item-icon"><i class="icon icon-message-square"></i></span><div><strong>Open support threads</strong><small>A reply may be waiting</small></div><b class="count">1</b></div>
+          <div class="open-item"><span class="item-icon"><i class="icon icon-trophy"></i></span><div><strong>Challenges in progress</strong><small>Progress counts toward points</small></div><b class="count">3</b></div>
+        </article>
+        <article class="panel points-activity">
+          <div class="panel-heading"><h2>Points activity</h2><a href="#rewards" data-page="Rewards">Ledger →</a></div>
+          <div class="points-row"><div><strong>Redeemed Education resource pack</strong><small>Oct 23</small></div><b class="negative">-750</b></div>
+          <div class="points-row"><div><strong>Completed identity verification</strong><small>Oct 20</small></div><b class="positive">+750</b></div>
+          <div class="points-row"><div><strong>Completed broker education challenge</strong><small>Oct 16</small></div><b class="positive">+250</b></div>
+        </article>
+        <article class="panel nexus-points">
+          <div class="nexus-title"><h2>Nexus Points</h2><i class="icon icon-star"></i></div><div class="points-total">1,450</div><a href="#rewards" data-page="Rewards">View rewards ↗</a>
+        </article>
+      </section>
+
+      <p class="disclaimer">CRM display only — balances mirror the platform for account servicing. This is not a dealing terminal.</p>
+      <footer class="footer"><span>HX Nexus trader workspace</span><span>Broker-managed · Identity-bound · No trading incentives</span></footer>
+    </div>
+  </main>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="demoToast" class="toast" role="status" aria-live="polite"><div class="toast-header"><strong class="me-auto">Hx Nexus demo</strong><button type="button" class="btn-close" data-bs-dismiss="toast"></button></div><div class="toast-body" id="toastMessage">This is a demo action.</div></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
